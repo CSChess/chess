@@ -13,22 +13,22 @@ public class AdvanceChessBoard
                 {
                     if(column%2==0)
                     {
-                        board[row][column]="w";
+                        board[row][column]="W";
                     }
                     if(column%2!=0)
                     {
-                        board[row][column]="b";
+                        board[row][column]="B";
                     }
                 }
                 if(row%2!=0)
                 {
                     if(column%2==0)
                     {
-                        board[row][column]="b";
+                        board[row][column]="B";
                     }
                     if(column%2!=0)
                     {
-                        board[row][column]="w";
+                        board[row][column]="W";
                     }
                 }
                 column++;
