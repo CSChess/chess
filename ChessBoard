@@ -1,3 +1,4 @@
+
 public class ChessBoard
 {
     String[][] board=new String[9][9];
@@ -57,6 +58,7 @@ public class ChessBoard
     }
     public void printBoard()
     {
+        chessBoard();
         int index1=0;
         int index2=0;
         while(index1<9)
