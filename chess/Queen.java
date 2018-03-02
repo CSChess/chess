@@ -1,6 +1,8 @@
 public class Queen
 {
-    public void move()
+    String colour;
+    public void Queen(String colour)
     {
+        this.colour=colour;
     }
 }

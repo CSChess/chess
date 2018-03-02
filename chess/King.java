@@ -1,7 +1,8 @@
-public class King extends pieces
+public class King extends Pieces
 {
-    void move()
+    String colour;
+    public void King(String colour)
     {
-        
+        this.colour=colour;
     }
 }
