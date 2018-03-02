@@ -5,4 +5,8 @@ public class King extends Pieces
     {
         this.colour=colour;
     }
+    public String toString()
+    {
+        return colour+"K";
+    }
 }
