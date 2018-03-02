@@ -4,12 +4,10 @@ abstract class  Pieces
     String column;
     String row;
     private void setColour(String colour){
-        if(colour.equals("b"))
-            this.colour = "black";
-        else if(colour.equals("w"))
-            this.colour = "white";
+        if(colour.equals("B")||colour.equals("W"))
+            this.colour = colour;
         else
-            System.out.println("wrong colour.(b for black and w for white)");
+            System.out.println("wrong colour.(B for black and W for white)");
     }
     private void move(String column, String row){
         this.column = column;
