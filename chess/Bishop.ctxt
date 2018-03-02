@@ -1,6 +1,6 @@
 #BlueJ class context
-comment0.target=Bishop
-comment0.text=\n\ Write\ a\ description\ of\ class\ Bishop\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=color
-comment1.target=java.lang.String\ Bishop(java.lang.String)
+comment0.params=colour
+comment0.target=void\ setBishop(java.lang.String)
+comment1.params=
+comment1.target=java.lang.String\ toString()
 numComments=2
