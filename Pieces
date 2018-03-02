@@ -1,0 +1,16 @@
+abstract class  Pieces
+{
+    String colour;
+    String column;
+    String row;
+    private void setColour(String colour){
+        if(colour.equals("B")||colour.equals("W"))
+            this.colour = colour;
+        else
+            System.out.println("wrong colour.(B for black and W for white)");
+    }
+    private void move(String column, String row){
+        this.column = column;
+        this.row = row;
+    }
+}
