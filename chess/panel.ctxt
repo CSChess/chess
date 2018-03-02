@@ -1,6 +1,11 @@
 #BlueJ class context
+<<<<<<< HEAD
 comment0.params=
 comment0.target=java.lang.String[][]\ chessBoard()
 comment1.params=
 comment1.target=void\ printBoard()
 numComments=2
+=======
+comment0.target=panel
+numComments=1
+>>>>>>> dbf39106c84de0b89400705fc162a64002f3a191
