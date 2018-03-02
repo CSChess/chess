@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 public class Panel
 {
     String[][] board=new String[9][9];
@@ -78,4 +79,9 @@ public class panel
 {
     
 >>>>>>> dbf39106c84de0b89400705fc162a64002f3a191
+=======
+public class panel
+{
+    
+>>>>>>> 09566d7f0d0ca30c6c1776c853486e8f57655968
 }
