@@ -1,9 +1,5 @@
-
-   
-  
 import javax.swing.*;  
-import java.awt.*;  
-  
+import java.awt.*;    
 public class IniChessBoard {  
       
     //set int cubewidth and boardwidth  

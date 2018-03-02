@@ -14,9 +14,6 @@ public class Rook
        {return "Rook(B)";}
        else
        {return "Rook(W)";}
-       
-        
-        
     }
     
 }
