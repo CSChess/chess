@@ -1,0 +1,9 @@
+abstract class  Pieces
+{
+    String column;
+    String row;
+    public void move(String column, String row){
+        this.column = column;
+        this.row = row;
+    }
+}
