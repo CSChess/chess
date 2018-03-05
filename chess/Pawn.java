@@ -5,4 +5,8 @@ public class Pawn extends Pieces
     {
         this.colour=colour;
     }
+    public String toString()
+    {
+        return colour+"P";
+    }
 }
