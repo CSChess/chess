@@ -1,7 +1,7 @@
 public class King extends Pieces
 {
     String colour;
-    public void setKing(String colour)
+    King(String colour)
     {
         this.colour=colour;
     }

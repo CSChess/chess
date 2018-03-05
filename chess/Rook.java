@@ -1,7 +1,7 @@
 public class Rook extends Pieces
 {
     String colour;
-    public void setRook(String colour)
+    Rook(String colour)
     {
        this.colour=colour;
     }

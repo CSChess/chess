@@ -1,7 +1,7 @@
 public class Bishop extends Pieces
 {
     String colour;
-    public void setBishop(String colour)
+    Bishop(String colour)
     {
        this.colour=colour;
     }
