@@ -1,31 +1,5 @@
-public class Board
+public class Panel
 {
-<<<<<<< HEAD
-    Grid[][] board;
-    Board(){
-        board = new Grid[8][8];
-        for(int i=0;i<8;i++){
-            for(int j=0;j<8;j++){
-                board[i][j]=new Grid(i,j);
-            }
-        }
-    }
-    Grid getGrid(String str)throws Exception{
-        int row = (int)str.charAt(0)-97;
-        int col = (int)str.charAt(1)-1;
-        if(row<0|row>7|col<0|row>8)throw new Exception("GridOutOfBoard");
-        return board[row][col];
-    }
-    void move(Grid i,Grid f){
-        f.setPieces(i.getPieces());
-        i.removePieces();
-    }
-    void initialize(){
-        
-    }
-    public String toString(){
-        
-=======
     String[][] board=new String[9][9];
     int row=0;
     int column=0;
@@ -105,6 +79,5 @@ public class Board
             index2=0;
             System.out.println();
         }
->>>>>>> d4cb26bbf5b1a577e954b0c8954b857dad2103a5
     }
 }
