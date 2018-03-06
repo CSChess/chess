@@ -1,12 +1,12 @@
-public class King extends Pieces
+public class Pawn extends Pieces
 {
     String colour;
-    King(String colour)
+    Pawn(String colour)
     {
         this.colour=colour;
     }
     public String toString()
     {
-        return colour+"K";
+        return colour+"P";
     }
 }

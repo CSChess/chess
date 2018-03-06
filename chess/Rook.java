@@ -1,19 +1,19 @@
-
-/**
- * Write a description of class Rook here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
-public class Rook
+public class Rook extends Pieces
 {
-    String color;
-    public String setRook(String color)
+    String colour;
+    Rook(String colour)
     {
+<<<<<<< HEAD
        if(color=="B")
        {return "Rook(B)";}
        else
        {return "Rook(W)";}
+=======
+       this.colour=colour;
     }
-    
+    public String toString()
+    {
+        return colour+"R";
+>>>>>>> 9bcf998bdb0c1db9970bf4232b880bacce7e25cc
+    }
 }

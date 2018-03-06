@@ -1,24 +1,12 @@
-
-/**
- * Write a description of class Bishop here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
-public class Bishop
+public class Bishop extends Pieces
 {
-    String color;
-    
-    
-    
-  
-    public String Bishop(String color)
+    String colour;
+    Bishop(String colour)
     {
-        if(color=="B")
-       {return "Bishop(B)";}
-       else
-       {return "Bishop(W)";}
-        
-        
+       this.colour=colour;
+    }
+    public String toString()
+    {
+        return colour+"B";
     }
 }

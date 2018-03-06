@@ -1,13 +1,11 @@
 abstract class  Pieces
 {
-    String colour;
+    String color;
     String column;
     String row;
     private void setColour(String colour){
-        if(colour.equals("b"))
-            this.colour = "black";
-        else if(colour.equals("w"))
-            this.colour = "white";
+        if(color.equals("B")||color.equals("W"))
+            this.color = color;
         else
             System.out.println("wrong colour.(b for black and w for white)");
     }

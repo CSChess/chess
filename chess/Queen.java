@@ -1,7 +1,7 @@
 public class Queen extends Pieces
 {
     String colour;
-    public void Queen(String colour)
+    Queen(String colour)
     {
         this.colour=colour;
     }
