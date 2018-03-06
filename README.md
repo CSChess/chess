@@ -5,4 +5,4 @@ Group number
 2.Chris
 3.Ralap
 4.Tony
-5.Richy
+5.Ricky
