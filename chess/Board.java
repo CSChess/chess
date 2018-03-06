@@ -1,4 +1,4 @@
-public class Panel
+public class Board
 {
     String[][] board=new String[9][9];
     int row=0;
