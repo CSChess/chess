@@ -1,7 +1,8 @@
 # chess
 Hello World
-Steven
-Chris
-Ralap
-Tony
-Richy
+Group number
+1.Steven
+2.Chris
+3.Ralap
+4.Tony
+5.Richy
