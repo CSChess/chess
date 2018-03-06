@@ -1,19 +1,12 @@
-
-/**
- * Write a description of class pieces here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
-public class pieces
+public class Pawn extends Pieces
 {
     // instance variables - replace the example below with your own
     private int x;
 
     /**
-     * Constructor for objects of class pieces
+     * Constructor for objects of class Pawn
      */
-    public pieces()
+    public Pawn()
     {
         // initialise instance variables
         x = 0;
