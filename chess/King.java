@@ -1,9 +1,8 @@
 public class King extends Pieces
 {
-    String colour;
     King(String colour)
     {
-        this.colour=colour;
+        super(colour);
     }
     public String toString()
     {

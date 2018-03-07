@@ -1,9 +1,8 @@
 public class Pawn extends Pieces
 {
-    String colour;
     Pawn(String colour)
     {
-        this.colour=colour;
+        super(colour);
     }
     public String toString()
     {

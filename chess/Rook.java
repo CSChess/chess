@@ -1,9 +1,8 @@
 public class Rook extends Pieces
 {
-    String colour;
     Rook(String colour)
     {
-       this.colour=colour;
+        super(colour);
     }
     public String toString()
     {
