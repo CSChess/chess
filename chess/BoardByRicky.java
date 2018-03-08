@@ -1,25 +1,18 @@
 public class BoardByRicky
 {
-    String[][] board=new String[9][9];
+    String[][] board=new String[8][8];
     int row=0;
     int column=0;
     FactoryByRicky BF = new FactoryByRicky("B");
     FactoryByRicky WF = new FactoryByRicky("W");
-    public void initialize()
+    private void initialize()
     {
-        for(int i=0;i<=8;i++)
-            for(int j=0;j<=8;j++)
+        for(int i=0;i<=7;i++)
+            for(int j=0;j<=7;j++)
             {
                 if(board[i][j]==null)
                 board[i][j]="  ";
             }
-        for(int counter = 0; counter < 8; counter++){
-            board[8][counter] = (char)(65+counter)+"";
-        }
-        for(int counter = 0; counter < 8; counter++){
-            board[counter][8] = (8-counter)+"";
-        }
-        board[8][8] ="  ";
         board[0][0] = BF.creatR().toString();
         board[0][1] = BF.creatN().toString();
         board[0][2] = BF.creatB().toString();
@@ -47,9 +40,9 @@ public class BoardByRicky
         initialize();
         int index1=0;
         int index2=0;
-        while(index1<9)
+        while(index1<8)
         {
-            while(index2<9)
+            while(index2<8)
             {
                 if(board[index1][index2].length()==3)
                 {
