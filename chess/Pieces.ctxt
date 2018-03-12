@@ -1,6 +1,7 @@
 #BlueJ class context
-comment0.params=colour
-comment0.target=void\ setColour(java.lang.String)
-comment1.params=column\ row
-comment1.target=void\ set(java.lang.String,\ java.lang.String)
-numComments=2
+comment0.target=Pieces
+comment1.params=colour
+comment1.target=void\ setColour(java.lang.String)
+comment2.params=column\ row
+comment2.target=void\ set(java.lang.String,\ java.lang.String)
+numComments=3
