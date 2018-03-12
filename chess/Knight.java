@@ -1,12 +1,9 @@
 public class Knight extends Pieces
 {
-    String colour;
-    Knight(String colour)
-    {
-        this.colour = colour;
+    Knight(String colour){
+        super.colour = colour;
     }
-    public String toString()
-    {
+    public String toString(){
         return colour+"N";
     }
 }

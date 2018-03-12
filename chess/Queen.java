@@ -1,9 +1,8 @@
 public class Queen extends Pieces
 {
-    String colour;
     Queen(String colour)
     {
-        this.colour=colour;
+        super.colour=colour;
     }
     public String toString()
     {

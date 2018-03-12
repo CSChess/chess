@@ -9,46 +9,36 @@ public class Board
             for(int j=0;j<=8;j++)
             {
                 if(board[i][j]==null)
-                board[i][j]=" ";
+                board[i][j]="  ";
             }
-        board[8][0]+="A";
-        board[8][1]+="B";
-        board[8][2]+="C";
-        board[8][3]+="D";
-        board[8][4]+="E";
-        board[8][5]+="F";
-        board[8][6]+="G";
-        board[8][7]+="H";
-        board[0][8]+="8";
-        board[1][8]+="7";
-        board[2][8]+="6";
-        board[3][8]+="5";
-        board[4][8]+="4";
-        board[5][8]+="3";
-        board[6][8]+="2";
-        board[7][8]+="1";
-        board[8][8]+=" ";
-        board[0][0]+=new Rook("B");
-        board[0][1]+=new Knight("B");
-        board[0][2]+=new Bishop("B");
-        board[0][3]+=new Queen("B");
-        board[0][4]+=new King("B");
-        board[0][5]+=new Bishop("B");
-        board[0][6]+=new Knight("B");
-        board[0][7]+=new Rook("B");
+        for(int counter = 0; counter < 8; counter++){
+            board[8][counter] = (char)(65+counter)+"";
+        }
+        for(int counter = 0; counter < 8; counter++){
+            board[counter][8] = (8-counter)+"";
+        }
+        board[8][8] ="  ";
+        board[0][0] = new Rook("B").toString();
+        board[0][1] = new Knight("B").toString();
+        board[0][2] = new Bishop("B").toString();
+        board[0][3] = new Queen("B").toString();
+        board[0][4] = new King("B").toString();
+        board[0][5] = new Bishop("B").toString();
+        board[0][6] = new Knight("B").toString();
+        board[0][7] = new Rook("B").toString();
         for(int i=0;i<=7;i++)
         {
-            board[1][i]+= new Pawn("B");
-            board[6][i]+= new Pawn("W");
+            board[1][i] = new Pawn("B").toString();
+            board[6][i] = new Pawn("W").toString();
         }
-        board[7][0]+=new Rook("W");
-        board[7][1]+=new Knight("W");
-        board[7][2]+=new Bishop("W");
-        board[7][3]+=new Queen("W");
-        board[7][4]+=new King("W");
-        board[7][5]+=new Bishop("W");
-        board[7][6]+=new Knight("W");
-        board[7][7]+=new Rook("W");
+        board[7][0] =new Rook("W").toString();
+        board[7][1] =new Knight("W").toString();
+        board[7][2] =new Bishop("W").toString();
+        board[7][3] =new Queen("W").toString();
+        board[7][4] =new King("W").toString();
+        board[7][5] =new Bishop("W").toString();
+        board[7][6] =new Knight("W").toString();
+        board[7][7] =new Rook("W").toString();
     }
     public void printBoard()
     {
@@ -61,17 +51,17 @@ public class Board
             {
                 if(board[index1][index2].length()==3)
                 {
-                    System.out.print(board[index1][index2]+" ");
+                    System.out.print(board[index1][index2].toString()+" ");
                     index2++;
                 }
                 if(board[index1][index2].length()==2)
                 {
-                    System.out.print(board[index1][index2]+"  ");
+                    System.out.print(board[index1][index2].toString()+"  ");
                     index2++;
                 }
                 else if(board[index1][index2].length()==1)
                 {
-                    System.out.print(board[index1][index2]+"   ");
+                    System.out.print(board[index1][index2].toString()+"   ");
                     index2++;
                 }
             }

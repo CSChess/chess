@@ -1,9 +1,8 @@
 public class Bishop extends Pieces
 {
-    String colour;
     Bishop(String colour)
     {
-       this.colour=colour;
+       super.colour=colour;
     }
     public String toString()
     {
