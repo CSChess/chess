@@ -1,10 +1,6 @@
 public class Board
 {
-<<<<<<< HEAD
     String[][] board=new String[8][8];
-=======
-    String[][] board=new String[9][9];
->>>>>>> c3978074b9823023e4fcfbbb02d8e71082304711
     int row=0;
     int column=0;
     public void initialize()
@@ -15,7 +11,6 @@ public class Board
                 if(board[i][j]==null)
                 board[i][j]="  ";
             }
-<<<<<<< HEAD
         board[0][0]+=new Rook("B");
         board[0][1]+=new Knight("B");
         board[0][2]+=new Bishop("B");
@@ -24,7 +19,6 @@ public class Board
         board[0][5]+=new Bishop("B");
         board[0][6]+=new Knight("B");
         board[0][7]+=new Rook("B");
-=======
         for(int counter = 0; counter < 8; counter++){
             board[8][counter] = (char)(65+counter)+"";
         }
@@ -40,7 +34,6 @@ public class Board
         board[0][5] = new Bishop("B").toString();
         board[0][6] = new Knight("B").toString();
         board[0][7] = new Rook("B").toString();
->>>>>>> c3978074b9823023e4fcfbbb02d8e71082304711
         for(int i=0;i<=7;i++)
         {
             board[1][i] = new Pawn("B").toString();
