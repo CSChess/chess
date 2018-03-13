@@ -9,5 +9,4 @@ abstract public class Pieces
             System.out.println("wrong colour.(b for black and w for white)");
     }
     abstract boolean move(Grid i,Grid f);
-    protected void move(String from, String to){}
 }
