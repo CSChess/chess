@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Grid
+comment1.params=row\ col
+comment1.target=Grid(int,\ int)
+comment2.params=p
+comment2.target=void\ setPieces(Pieces)
+comment3.params=
+comment3.target=void\ removePieces()
+comment4.params=
+comment4.target=Pieces\ getPieces()
+comment5.params=
+comment5.target=void\ setName()
+comment6.params=
+comment6.target=int\ getRow()
+comment7.params=
+comment7.target=int\ getCol()
+numComments=8

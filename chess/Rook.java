@@ -2,7 +2,7 @@ public class Rook extends Pieces
 {
     Rook(String colour)
     {
-        super(colour);
+       super(colour);
     }
     public String toString()
     {

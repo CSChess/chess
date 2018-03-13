@@ -2,7 +2,7 @@ public class King extends Pieces
 {
     King(String colour)
     {
-        super(colour);
+       super(colour);
     }
     public String toString()
     {
