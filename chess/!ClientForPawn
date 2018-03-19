@@ -1,0 +1,27 @@
+public class ClientForPawn
+{
+    public void movePawn(String moveFrom,String moveTo)
+    {
+        Board b=new Board();
+        Pawn p1=new Pawn();
+        Grid from= b.getGrid(moveFrom);
+        Grid to= b.getGrid(moveTo);
+        int checkRow=Pawn.conversion(moveFrom.substring(1,2));
+        if(from.p.getColour()==true&&checkRow==1)
+        {
+            boolean checkInitialB=p1.checkFirstMovePawn(moveFrom,moveTo);
+        }
+        if(from.p.getColour()==false&&checkRow==6)
+        {
+            boolean checkInitialW=p1.checkFirstMovePawn(moveFrom,moveTo);
+        }
+        if(from.p.getColour()==true&&!(checkRow==1))
+        {
+            boolean checkB=p1.checkMovePawn(moveFrom,moveTo);
+        }
+        if(from.p.getColour()==false&&!(checkRow==6))
+        {
+            boolean checkW=p1.checkMovePawn(moveFrom,moveTo);
+        }
+    }
+}
