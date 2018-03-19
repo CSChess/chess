@@ -1,0 +1,85 @@
+public class Pawn extends Pieces
+
+{
+    Pawn(){}
+    Pawn(boolean colour){
+
+        super(colour);
+
+    }
+
+    public String toString(){
+
+        return colour_name+"P   ";
+
+    }
+
+    void judge(Grid i,Grid f) throws WrongMoveException{
+
+    }
+
+    static public int conversion(String move)
+    {
+        int output=0;
+        if(move.equals("A")){output=0;}
+        if(move.equals("B")){output=1;}
+        if(move.equals("C")){output=2;}
+        if(move.equals("D")){output=3;}
+        if(move.equals("E")){output=4;}
+        if(move.equals("F")){output=5;}
+        if(move.equals("G")){output=6;}
+        if(move.equals("H")){output=7;}
+        if(move.equals("1")){output=0;}
+        if(move.equals("2")){output=1;}
+        if(move.equals("3")){output=2;}
+        if(move.equals("4")){output=3;}
+        if(move.equals("5")){output=4;}
+        if(move.equals("6")){output=5;}
+        if(move.equals("7")){output=6;}
+        if(move.equals("8")){output=7;}
+        return output;
+    }
+    public boolean checkFirstMovePawn(String moveFrom,String moveTo)
+    {
+        int row1;
+        int column1;
+        int row2;
+        int column2;
+        boolean checkFirstPawn=true;
+        row1=conversion(moveFrom.substring(1,2));
+        column1=conversion(moveFrom.substring(0,1));
+        row2=conversion(moveTo.substring(1,2));
+        column2=conversion(moveTo.substring(0,1));
+        if(row1==6)
+        {
+            if(!(row1==row2+1)||!(row1==row2+2)){checkFirstPawn=false;}
+        }
+        if(row1==1)
+        {
+            if(!(row1==row2-1)||!(row1==row2-2)){checkFirstPawn=false;}
+        }
+        return checkFirstPawn;
+    }
+    public boolean checkMovePawn(String moveFrom,String moveTo)
+    {
+        int row3;
+        int column3;
+        int row4;
+        int column4;
+        boolean checkPawn=true;
+        row3=conversion(moveFrom.substring(1,2));
+        column3=conversion(moveFrom.substring(0,1));
+        row4=conversion(moveTo.substring(1,2));
+        column4=conversion(moveTo.substring(0,1));
+        if(b.board[row3][column3].p.getColour()==false)
+        {
+            if(!(row3==row4+1)){checkPawn=false;}
+        }
+        if(b.board[row3][column3].p.getColour()==true)
+        {
+            if(!(row3==row4-1)){checkPawn=false;}
+        }
+        if(true){checkPawn=false;}
+        return checkPawn;
+    }
+}
