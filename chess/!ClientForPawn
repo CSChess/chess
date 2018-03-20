@@ -1,6 +1,6 @@
 public class ClientForPawn
 {
-    public void movePawn(String moveFrom,String moveTo)
+    public void movePawn(String moveFrom,String moveTo)throws GridOutOfBoardException
     {
         Board b=new Board();
         Pawn p1=new Pawn();
