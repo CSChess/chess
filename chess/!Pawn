@@ -29,14 +29,14 @@ public class Pawn extends Pieces
         if(move.equals("F")){output=5;}
         if(move.equals("G")){output=6;}
         if(move.equals("H")){output=7;}
-        if(move.equals("1")){output=0;}
-        if(move.equals("2")){output=1;}
-        if(move.equals("3")){output=2;}
-        if(move.equals("4")){output=3;}
-        if(move.equals("5")){output=4;}
-        if(move.equals("6")){output=5;}
-        if(move.equals("7")){output=6;}
-        if(move.equals("8")){output=7;}
+        if(move.equals("1")){output=7;}
+        if(move.equals("2")){output=6;}
+        if(move.equals("3")){output=5;}
+        if(move.equals("4")){output=4;}
+        if(move.equals("5")){output=3;}
+        if(move.equals("6")){output=2;}
+        if(move.equals("7")){output=1;}
+        if(move.equals("8")){output=0;}
         return output;
     }
     public boolean checkFirstMovePawn(String moveFrom,String moveTo)
