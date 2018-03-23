@@ -1,22 +1,21 @@
 public class Bishop extends Pieces
 {
-    protected Bishop(String colour)
-    {
-       super.colour=colour;
+    Bishop(boolean colour){
+        super(colour);
     }
-    public String toString()
-    {
-        return colour+"B";
+    public String toString(){
+        return colour_name+"B   ";
     }
-    protected boolean moveRule(String from, String to){
-        int fC = Translater.conversion(from.substring(0,1));
-        int fR = Translater.conversion(from.substring(1,2));
-        int tC = Translater.conversion(to.substring(0,1));
-        int tR = Translater.conversion(to.substring(1,2));
-        if(Math.abs(fC-tC) == Math.abs(fR-tR)){
-            return true;
+    void judge(Grid i,Grid f) throws WrongMoveException{
+        int iRow = i.getRow();
+        int iCol = i.getCol();
+        int fRow = f.getRow();
+        int fCol = f.getCol();
+        int colDistance=Math.abs(iCol-fCol);
+        int rowDistance=Math.abs(iRow-fRow);
+        if(colDistance==rowDistance){
+            return;
         }
-        else
-            return false;
+        throw new WrongMoveException("");
     }
 }
