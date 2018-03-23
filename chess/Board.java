@@ -1,72 +1,87 @@
 public class Board
 {
-    String[][] board=new String[8][8];
-    int row=0;
-    int column=0;
+    Grid[][] board;
     Board(){
+        board = new Grid[8][8];
+        for(int i=0;i<8;i++){
+            for(int j=0;j<8;j++){
+                board[i][j]=new Grid(i,j);
+            }
+        }
         initialize();
     }
-    private void initialize()
-    {
-        for(int i=0;i<=7;i++)
-            for(int j=0;j<=7;j++)
-            {
-                if(board[i][j]==null)
-                board[i][j]="  ";
-            }
-        board[0][0] = Pieces.creatR("B").toString();
-        board[0][1] = Pieces.creatN("B").toString();
-        board[0][2] = Pieces.creatB("B").toString();
-        board[0][3] = Pieces.creatQ("B").toString();
-        board[0][4] = Pieces.creatK("B").toString();
-        board[0][5] = Pieces.creatB("B").toString();
-        board[0][6] = Pieces.creatN("B").toString();
-        board[0][7] = Pieces.creatR("B").toString();
+    
+    Grid getGrid(String str)throws GridOutOfBoardException{
+        int row = (int)str.charAt(0)-97;
+        int col = (int)str.charAt(1)-1;
+        if(row<0|row>7|col<0|row>8)throw new GridOutOfBoardException("");
+        return board[row][col];
+    }
+    
+    void move(Grid i,Grid f) throws WrongMoveException,GoodGameException{
+        if(i.getPieces().getColour()==f.getPieces().getColour())throw new WrongMoveException("");
+        i.getPieces().judge(i,f);
+        f.movePieces(i.getPieces());
+        i.removePieces();
+    }
+    
+    void initialize(){
+        board[0][0].p = new Rook(true);
+        board[0][1].p = new Knight(true);
+        board[0][2].p = new Bishop(true);
+        board[0][3].p = new Queen(true);
+        board[0][4].p = new King(true);
+        board[0][5].p = new Bishop(true);
+        board[0][6].p = new Knight(true);
+        board[0][7].p = new Rook(true);
         for(int i=0;i<=7;i++)
         {
-            board[1][i] = Pieces.creatP("B").toString();
-            board[6][i] = Pieces.creatP("W").toString();
+            board[1][i].p = new Pawn(true);
+            board[6][i].p = new Pawn(false);
         }
-        board[7][0] = Pieces.creatR("W").toString();
-        board[7][1] = Pieces.creatN("W").toString();
-        board[7][2] = Pieces.creatB("W").toString();
-        board[7][3] = Pieces.creatQ("W").toString();
-        board[7][4] = Pieces.creatK("W").toString();
-        board[7][5] = Pieces.creatB("W").toString();
-        board[7][6] = Pieces.creatN("W").toString();
-        board[7][7] = Pieces.creatR("W").toString();
+        board[7][0].p = new Rook(false);
+        board[7][1].p = new Knight(false);
+        board[7][2].p = new Bishop(false);
+        board[7][3].p = new Queen(false);
+        board[7][4].p = new King(false);
+        board[7][5].p = new Bishop(false);
+        board[7][6].p = new Knight(false);
+        board[7][7].p = new Rook(false);
     }
+    
     public void printBoard()
     {
-        int index1=0;
-        int index2=0;
-        while(index1<8)
+        String rowNumber[]={"A","B","C","D","E","F","G","H"};
+        String colNumber[]={"8","7","6","5","4","3","2","1"};
+        int i=0;
+        int j=0;
+        while(i<8)
         {
-            while(index2<8)
+            System.out.print(colNumber[i]+" ");
+            while(j<8)
             {
-                if(board[index1][index2].length()==3)
+                
+                if(board[i][j].p==null)
                 {
-                    System.out.print(board[index1][index2].toString()+" ");
-                    index2++;
+                    System.out.print("     ");
+                    j++;
                 }
-                if(board[index1][index2].length()==2)
+                else 
                 {
-                    System.out.print(board[index1][index2].toString()+"  ");
-                    index2++;
-                }
-                else if(board[index1][index2].length()==1)
-                {
-                    System.out.print(board[index1][index2].toString()+"   ");
-                    index2++;
+                    System.out.print(board[i][j].p);
+                    j++;
                 }
             }
-            index1++;
-            index2=0;
+            i++;
+            j=0;
             System.out.println();
         }
-    }
-    public void move(String from,String to)
-    {
-        
+        System.out.print("  ");
+        for(i=0;i<8;i++)
+        {
+            System.out.print(rowNumber[i]+"    ");
+        }
     }
 }
+    
+    
