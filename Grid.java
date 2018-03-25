@@ -8,15 +8,18 @@ public class Grid
         this.col = col;
     }
     
-    void setPieces(Pieces p){
+    void movePieces(Pieces p) throws GoodGameException{
+        if(this.p instanceof King)throw new GoodGameException("");
         this.p = p;
     }
-    boolean removePieces ()throws Exception{
-        if(p instanceof King)throw new Exception("goodgame");
+    void removePieces(){
         this.p = null;
     }
     Pieces getPieces(){
         return p;
+    }
+    void setPieces(Pieces p){
+        this.p = p;
     }
     
     int getRow(){
@@ -27,6 +30,9 @@ public class Grid
     }
     
     public String toString(){
-        
+        if(p==null){
+            return "  ";
+        }
+        return p.toString();
     }
 }
