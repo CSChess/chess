@@ -42,8 +42,8 @@ public class Client
     }
     
     private String colour(boolean b){
-        if(b == true)return "white";
-        return "black";
+        if(b == true)return "black";
+        return "white";
     }
     
     public static void main (String[] args) throws IOException{
