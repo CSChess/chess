@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.target=GoodGameException
+comment1.params=message
+comment1.target=GoodGameException(java.lang.String)
+numComments=2

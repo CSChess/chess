@@ -13,13 +13,16 @@ public class Client
         System.out.println("Let's chess!");
         while(flag){
             System.out.println(b);
-            System.out.println(colour(turn)+" turn");
+            System.out.println(colour()+" turn");
             
             System.out.println("from?");
             String beg = br.readLine();
             
+            if(beg.equals("exit"))System.exit(0);
+            
             System.out.println("\nto?");
             String end = br.readLine();
+            if(end.equals("exit"))System.exit(0);
             
             System.out.println("\n");
             
@@ -31,18 +34,18 @@ public class Client
                 flag = false;
             }
             catch(WrongMoveException ex){
-                System.out.println("Wrong move, try again");
+                System.out.println("WRONG MOVE, Try again\n");
             }
             catch(ArrayIndexOutOfBoundsException ex){
                 System.out.println("grid out of board");
             }
         }
         
-        System.out.println(colour(!turn)+" win!");
+        System.out.println(colour()+" win!");
     }
     
-    private String colour(boolean b){
-        if(b == true)return "white";
+    private String colour(){
+        if(this.turn == true)return "white";
         return "black";
     }
     

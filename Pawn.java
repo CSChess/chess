@@ -9,7 +9,7 @@ public class Pawn extends Pieces
         int row = f.getRow()-i.getRow();
         int col = f.getCol()-i.getCol();
         
-        if(isPromotion = true){
+        if(isPromotion == true){
             return;
             //to be finished
         }
