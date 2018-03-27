@@ -44,9 +44,15 @@ public class Client
         System.out.println(colour()+" win!");
     }
     
+<<<<<<< HEAD
     private String colour(){
         if(this.turn == true)return "white";
         return "black";
+=======
+    private String colour(boolean b){
+        if(b == true)return "black";
+        return "white";
+>>>>>>> eecce9c1977fde4e566ff0ef0c976950e683ee41
     }
     
     public static void main (String[] args) throws IOException{
