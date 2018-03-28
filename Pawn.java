@@ -19,20 +19,20 @@ public class Pawn extends Pieces
         else a=-1;
         
         if(super.isMove==false){
-            if(row==0&&col==a*2){
+            if(col==0&&row==a*2){
                 return;
             }
         }
         
-        if(row==0){
-            if(col==a){
+        if(col==0){
+            if(row==a){
                 if(f.getPieces()==null){
                     return;
                 }
             }
         }
-        else if(row==1||row==-1){
-            if(col==a){
+        else if(col==1||col==-1){
+            if(row==a){
                 if(f.getPieces()!=null){
                     return;
                 }
