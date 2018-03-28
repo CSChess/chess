@@ -8,19 +8,20 @@ public class Rook extends Pieces
         int colI = i.getCol();
         int rowF = f.getRow();
         int colF = f.getCol();
+       
         
         if(!(rowI==rowF||colI==colF))throw new WrongMoveException("");
         
         if(rowI==rowF){
             int a = (int)((colF-colI)/(Math.abs(colF-colI)));
             for(int x = colI+a;x<colF;x+=a){
-                if(board[rowI][x]==null)throw new WrongMoveException("");
+                if(board[rowI][x]!=null)throw new WrongMoveException("");
             }
         }
         else if(colI==colF){
             int a =(int)((rowF-rowI)/(Math.abs(rowF-rowI)));
             for(int x = rowI+1;x<rowF;x+=a){
-                if(board[x][colI]==null)throw new WrongMoveException("");
+                if(board[x][colI]!=null)throw new WrongMoveException("");
             }
         }
         return;
