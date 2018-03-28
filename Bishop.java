@@ -23,12 +23,19 @@ public class Bishop extends Pieces
         if(col>0)b=1;
         else b=-1;
         
-        for(int x=rowI+a;x<rowF;x+=a){
-            for(int y=colI+b;y<colF;y+=b){
-                if(board[x][y]!=null)throw new WrongMoveException("");
-            }
-        }
         
+        int x=rowI;
+        int y=colI;
+        while(x!=rowF&&y!=colF)
+        {
+           x=rowI+a;
+           y=colI+b;
+           if(board[x][y]!=null)throw new WrongMoveException(""); 
+            
+            
+            
+            
+        }
         return;
     }
     public String toString(){
