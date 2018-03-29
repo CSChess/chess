@@ -28,8 +28,8 @@ public class Bishop extends Pieces
         int y=colI;
         while(x!=rowF&&y!=colF)
         {
-           x=rowI+a;
-           y=colI+b;
+           x=x+a;
+           y=y+b;
            if(board[x][y]!=null)throw new WrongMoveException(""); 
             
             
