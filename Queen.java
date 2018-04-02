@@ -8,39 +8,46 @@ public class Queen extends Pieces
         int rowI = i.getRow();
         int colF = f.getCol();
         int colI = i.getCol();
-        
+        boolean judge=false;
         if(rowF-rowI==0){
+            judge=true;
             int a = (int)((colF-colI)/(Math.abs(colF-colI)));
-            for(int x = colI+a;x<colF;x+=a){
-                if(board[rowI][x]==null)throw new WrongMoveException("");
+            for(int x = colI+a;x!=colF;x+=a){
+                if(board[rowI][x].getPieces()!=null)throw new WrongMoveException("");
             }
             return;
         }
-        if(colF-colI==0){
+        else if(colF-colI==0){
+            judge=true;
             int a =(int)((rowF-rowI)/(Math.abs(rowF-rowI)));
-            for(int x = rowI+1;x<rowF;x+=a){
-                if(board[x][colI]==null)throw new WrongMoveException("");
+            for(int x = rowI+a;x!=rowF;x+=a){
+                if(board[x][colI].getPieces()!=null)throw new WrongMoveException("");
             }
             return;
         }
-        if(Math.abs(rowF-rowI)==Math.abs(colF-colI)){
+        else if(Math.abs(rowF-rowI)==Math.abs(colF-colI)){
             int a;
             int b;
-        
+            judge=true;
             if(rowF-rowI>0)a=1;
             else a=-1;
         
             if(colF-colI>0)b=1;
             else b=-1;
             
-            for(int x=rowI+a;x<rowF;x+=a){
-                for(int y=colI+b;y<colF;y+=b){
-                    if(board[x][y]!=null)throw new WrongMoveException("");
-                }
+            int x=rowI;
+            int y=colI;
+            while(x!=(rowF-a) && y!=(colF-b))
+            {
+                 x=x+a;
+                 y=y+b;
+                 if(board[x][y].getPieces()!=null)throw new WrongMoveException(""); 
             }
             
             return;
         }
+        if(!judge)
+            throw new WrongMoveException("");
     }
     public String toString(){
         if(super.getColour()==true)return "WQ";
