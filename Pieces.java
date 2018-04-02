@@ -6,6 +6,7 @@ abstract public class Pieces
         this.colour = b;
         isMove = false;
     }
+    Pieces(){}
     boolean getColour(){
         return colour;
     }
