@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 public class Bishop extends Pieces{
+=======
+public class Bishop extends Pieces
+{
+    Bishop(){}
+>>>>>>> refs/remotes/origin/master
     Bishop(boolean colour){
         super(colour);
     }
@@ -22,13 +28,41 @@ public class Bishop extends Pieces{
         if(col>0)b=1;
         else b=-1;
         
-        for(int x=rowI+a;x<rowF;x+=a){
-            for(int y=colI+b;y<colF;y+=b){
-                if(board[x][y]!=null)throw new WrongMoveException("");
-            }
-        }
         
+        int x=rowI;
+        int y=colI;
+        while(x!=(rowF-a) && y!=(colF-b))
+        {
+           x=x+a;
+           y=y+b;
+           if(board[x][y].getPieces()!=null)throw new WrongMoveException(""); 
+        }
         return;
+    }
+    boolean judgeKing(Grid i,Grid f,Grid[][] board){
+        int rowI = i.getRow();
+        int colI = i.getCol();
+        int rowF = f.getRow();
+        int colF = f.getCol();
+        int row = rowF-rowI;
+        int col = colF-colI;
+        boolean checkmate=false;
+        if(Math.abs(row)!=Math.abs(col))return checkmate;
+        int a;
+        int b;
+        if(row>0)a=1;
+        else a=-1;
+        if(col>0)b=1;
+        else b=-1;
+        int x=rowI;
+        int y=colI;
+        while(x!=(rowF-a) && y!=(colF-b))
+        {
+           x=x+a;
+           y=y+b;
+           if(board[x][y].getPieces()!=null)return checkmate; 
+        }
+        return true;
     }
     public String toString(){
         if(super.getColour()==true)return "WB";

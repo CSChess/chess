@@ -1,5 +1,6 @@
 public class Rook extends Pieces
 {
+    Rook(){}
     Rook(boolean colour){
         super(colour);
     }
@@ -8,22 +9,53 @@ public class Rook extends Pieces
         int colI = i.getCol();
         int rowF = f.getRow();
         int colF = f.getCol();
-        
+       
         if(!(rowI==rowF||colI==colF))throw new WrongMoveException("");
         
         if(rowI==rowF){
             int a = (int)((colF-colI)/(Math.abs(colF-colI)));
+<<<<<<< HEAD
             for(int x = colI+a;x<colF;x+=a){
                 if(board[rowI][x]!=null)throw new WrongMoveException("");
+=======
+            for(int x = colI+a;x!=colF;x+=a){
+                if(board[rowI][x].getPieces()!=null)throw new WrongMoveException("");
+>>>>>>> refs/remotes/origin/master
             }
         }
         else if(colI==colF){
             int a =(int)((rowF-rowI)/(Math.abs(rowF-rowI)));
+<<<<<<< HEAD
             for(int x = rowI+1;x<rowF;x+=a){
                 if(board[x][colI]!=null)throw new WrongMoveException("");
+=======
+            for(int x = rowI+a;x!=rowF;x+=a){
+                if(board[x][colI].getPieces()!=null)throw new WrongMoveException("");
+>>>>>>> refs/remotes/origin/master
             }
         }
         return;
+    }
+    boolean judgeKing(Grid i,Grid f,Grid[][] board){
+        int rowI = i.getRow();
+        int colI = i.getCol();
+        int rowF = f.getRow();
+        int colF = f.getCol();
+        boolean checkmate=false;
+        if(!(rowI==rowF||colI==colF))return checkmate;
+        if(rowI==rowF){
+            int a = (int)((colF-colI)/(Math.abs(colF-colI)));
+            for(int x = colI+a;x!=colF;x+=a){
+                if(board[rowI][x].getPieces()!=null)return checkmate;
+            }
+        }
+        else if(colI==colF){
+            int a =(int)((rowF-rowI)/(Math.abs(rowF-rowI)));
+            for(int x = rowI+a;x!=rowF;x+=a){
+                if(board[x][colI].getPieces()!=null)return checkmate;
+            }
+        }
+        return true;
     }
     public String toString(){
         if(super.getColour()==true)return "WR";
