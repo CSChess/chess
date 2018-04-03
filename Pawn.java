@@ -41,6 +41,26 @@ public class Pawn extends Pieces
         }
         throw new WrongMoveException("");
     }
+    boolean judgeKing(Grid i,Grid f,Grid[][] board)throws WrongMoveException{
+        int row = f.getRow()-i.getRow();
+        int col = f.getCol()-i.getCol();
+        boolean checkmate=false;
+        if(isPromotion == true){
+            //return;
+            //to be finished
+        }
+        int a;
+        if(super.colour == true)a=1;
+        else a=-1;
+        if(col==1||col==-1){
+            if(row==a){
+                if(f.getPieces()!=null){
+                    return true;
+                }
+            }
+        }
+        return checkmate;
+    }
     public String toString(){
         if(super.getColour()==true)return "WP";
         return "BP";
