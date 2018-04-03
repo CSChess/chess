@@ -1,11 +1,11 @@
 import java.util.Scanner;
 import java.io.*;
-public class Client
+public class Game
 {
     private Board b;
     private boolean flag = true;
     private boolean turn = true;
-    Client() throws IOException{
+    Game() throws IOException{
         b = new Board();
         b.init();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -23,6 +23,8 @@ public class Client
             System.out.println("\nto?");
             String end = br.readLine();
             if(end.equals("exit"))System.exit(0);
+            
+            if(beg.equalsIgnoreCase("whosyour")&&end.equalsIgnoreCase("daddy")){System.out.println(colour()+" win?!");System.exit(0);}
             
             System.out.println("\n");
             
@@ -49,6 +51,6 @@ public class Client
     }
     
     public static void main (String[] args) throws IOException{
-        new Client();
+        this();
     }
 }

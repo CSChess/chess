@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=ChessTester
+comment1.params=path
+comment1.target=ChessTester(java.lang.String)
+comment2.params=str
+comment2.target=Pieces\ deterPieces(java.lang.String)
+comment3.params=args
+comment3.target=void\ main(java.lang.String[])
+numComments=4

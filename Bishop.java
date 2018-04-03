@@ -1,5 +1,4 @@
-public class Bishop extends Pieces
-{
+public class Bishop extends Pieces{
     Bishop(boolean colour){
         super(colour);
     }

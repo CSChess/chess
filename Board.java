@@ -54,6 +54,10 @@ public class Board
         }
     }
     
+    Grid[][] getBoard(){
+        return this.board;
+    }
+    
     public String toString(){
         String result="";
         for(int i=7;i>-1;i--){

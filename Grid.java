@@ -9,7 +9,7 @@ public class Grid
     }
     
     void movePieces(Pieces p) throws GoodGameException{
-        if(this.p instanceof King)throw new GoodGameException("");
+        if(this.p instanceof King)throw new GoodGameException("");  
         this.p = p;
     }
     void removePieces(){
