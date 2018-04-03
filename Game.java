@@ -51,6 +51,6 @@ public class Game
     }
     
     public static void main (String[] args) throws IOException{
-        this();
+        new Game();
     }
 }
