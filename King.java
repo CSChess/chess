@@ -51,6 +51,11 @@ public class King extends Pieces
                             if(b.judgeKing(board[checkRow][checkCol],f,board)==true)
                             {throw new WrongMoveException("");}
                         }
+                        if(board[checkRow][checkCol].getPieces().equals("BP"))
+                        {
+                            if(p.judgeKing(board[checkRow][checkCol],f,board)==true)
+                            {throw new WrongMoveException("");}
+                        }
                     }
                     if(super.getColour()==false)
                     {
@@ -77,6 +82,11 @@ public class King extends Pieces
                         if(board[checkRow][checkCol].getPieces().equals("WB"))
                         {
                             if(b.judgeKing(board[checkRow][checkCol],f,board)==true)
+                            {throw new WrongMoveException("");}
+                        }
+                        if(board[checkRow][checkCol].getPieces().equals("WP"))
+                        {
+                            if(p.judgeKing(board[checkRow][checkCol],f,board)==true)
                             {throw new WrongMoveException("");}
                         }
                     }
