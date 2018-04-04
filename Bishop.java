@@ -1,10 +1,6 @@
-<<<<<<< HEAD
-public class Bishop extends Pieces{
-=======
 public class Bishop extends Pieces
 {
     Bishop(){}
->>>>>>> refs/remotes/origin/master
     Bishop(boolean colour){
         super(colour);
     }
