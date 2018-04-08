@@ -40,14 +40,10 @@ public class Pawn extends Pieces
         }
         throw new WrongMoveException("");
     }
-    boolean judgeKing(Grid i,Grid f,Grid[][] board)throws WrongMoveException{
+    boolean judgeKing(Grid i,Grid f,Grid[][] board){
         int row = f.getRow()-i.getRow();
         int col = f.getCol()-i.getCol();
         boolean checkmate=false;
-        if(isPromotion == true){
-            //return;
-            //to be finished
-        }
         int a;
         if(super.colour == true)a=1;
         else a=-1;
