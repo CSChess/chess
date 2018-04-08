@@ -6,8 +6,7 @@ public class  Promotion
     int number=8;
     int number2=1;
     int letter=97;
-    if(!(input.substring(1,2).equals("P")))
-        return false;
+
     if(color.equals("white"))
        {
        while(true)
