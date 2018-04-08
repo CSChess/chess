@@ -31,6 +31,6 @@ public class ChessTester {
     }
 
     public static void main(String[] args) throws  Exception{
-        new ChessTester("/home/chris/Documents/test");
+        new ChessTester("args[0]");
     }
 }
