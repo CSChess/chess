@@ -14,6 +14,9 @@ public class Board
         int col = (int)(str.charAt(0)-97);
         int row = (int)(str.charAt(1)-49);
         
+        //System.out.println(row);
+        //System.out.println(col);
+        
         return board[row][col];
     }
     
@@ -66,5 +69,33 @@ public class Board
         }
         result += "  a  b  c  d  e  f  g  h\n";
         return result;
+    }
+    void promotion(String chessman,Grid g,Grid remove)
+    {
+        boolean color=true;
+        int row=1;
+        if(chessman.substring(0,1)=="W")
+        {
+           color=false;
+           row=8;
+        }
+        if(chessman.substring(1,2).equals("R")){
+            remove.setPieces(null);
+            g.setPieces(new Rook(color));
+        }
+        if(chessman.substring(1,2).equals("N")){
+            g.setPieces(new Knight(color));
+            remove.setPieces(null);
+        } 
+        if(chessman.substring(1,2).equals("B")){
+            g.setPieces(new Bishop(color));
+            remove.setPieces(null);
+        } 
+        if(chessman.substring(1,2).equals("Q")){
+            g.setPieces(new Queen(color));
+            remove.setPieces(null);
+        } 
+        
+        
     }
 }
