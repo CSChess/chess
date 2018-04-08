@@ -4,92 +4,49 @@ public class King extends Pieces
         super(colour);
     }
     void judge(Grid i,Grid f,Grid[][] board)throws WrongMoveException{
-        int row = Math.abs(f.getRow()-i.getRow());
-        int col = Math.abs(f.getCol()-i.getCol());
-        if((row==0||row==1)&&(col==0||col==1)){
-            return;
-        }
-        
-        //送将判定
         int checkRow=0;
         int checkCol=0;
-        Rook r=new Rook(true);
-        Queen q=new Queen(true);
-        Pawn p=new Pawn(true);
-        Knight k=new Knight(true);
-        Bishop b=new Bishop(true);
+        Rook r=new Rook();
+        Queen q=new Queen();
+        Pawn p=new Pawn();
+        Knight k=new Knight();
+        Bishop b=new Bishop();
         while(checkRow<8)
         {
             while(checkCol<8)
             {
-                if(super.getColour()!=board[checkRow][checkCol].getPieces().getColour())
+                if(board[checkRow][checkCol].getPieces()!=null&&super.getColour()!=board[checkRow][checkCol].getPieces().getColour())
                 {
-                    if(super.getColour()==true)
-                    {
-                        if(board[checkRow][checkCol].getPieces().equals("BR"))
+                        if(board[checkRow][checkCol].getPieces().toString().substring(1,2).equals("R"))
                         {
                             if(r.judgeKing(board[checkRow][checkCol],f,board)==true)
                             {throw new WrongMoveException("");}
                         }
-                        if(board[checkRow][checkCol].getPieces().equals("BK"))
+                        if(board[checkRow][checkCol].getPieces().toString().substring(1,2).equals("K"))
                         {
                             if(judgeKing(board[checkRow][checkCol],f,board)==true)
                             {throw new WrongMoveException("");}
                         }
-                        if(board[checkRow][checkCol].getPieces().equals("BQ"))
+                        if(board[checkRow][checkCol].getPieces().toString().substring(1,2).equals("Q"))
                         {
                             if(q.judgeKing(board[checkRow][checkCol],f,board)==true)
                             {throw new WrongMoveException("");}
                         }
-                        if(board[checkRow][checkCol].getPieces().equals("BN"))
+                        if(board[checkRow][checkCol].getPieces().toString().substring(1,2).equals("N"))
                         {
                             if(k.judgeKing(board[checkRow][checkCol],f,board)==true)
                             {throw new WrongMoveException("");}
                         }
-                        if(board[checkRow][checkCol].getPieces().equals("BB"))
+                        if(board[checkRow][checkCol].getPieces().toString().substring(1,2).equals("B"))
                         {
                             if(b.judgeKing(board[checkRow][checkCol],f,board)==true)
                             {throw new WrongMoveException("");}
                         }
-                        if(board[checkRow][checkCol].getPieces().equals("BP"))
+                        if(board[checkRow][checkCol].getPieces().toString().substring(1,2).equals("P"))
                         {
                             if(p.judgeKing(board[checkRow][checkCol],f,board)==true)
                             {throw new WrongMoveException("");}
                         }
-                    }
-                    if(super.getColour()==false)
-                    {
-                        if(board[checkRow][checkCol].getPieces().equals("WR"))
-                        {
-                            if(r.judgeKing(board[checkRow][checkCol],f,board)==true)
-                            {throw new WrongMoveException("");}
-                        }
-                        if(board[checkRow][checkCol].getPieces().equals("WK"))
-                        {
-                            if(judgeKing(board[checkRow][checkCol],f,board)==true)
-                            {throw new WrongMoveException("");}
-                        }
-                        if(board[checkRow][checkCol].getPieces().equals("WQ"))
-                        {
-                            if(q.judgeKing(board[checkRow][checkCol],f,board)==true)
-                            {throw new WrongMoveException("");}
-                        }
-                        if(board[checkRow][checkCol].getPieces().equals("WN"))
-                        {
-                            if(k.judgeKing(board[checkRow][checkCol],f,board)==true)
-                            {throw new WrongMoveException("");}
-                        }
-                        if(board[checkRow][checkCol].getPieces().equals("WB"))
-                        {
-                            if(b.judgeKing(board[checkRow][checkCol],f,board)==true)
-                            {throw new WrongMoveException("");}
-                        }
-                        if(board[checkRow][checkCol].getPieces().equals("WP"))
-                        {
-                            if(p.judgeKing(board[checkRow][checkCol],f,board)==true)
-                            {throw new WrongMoveException("");}
-                        }
-                    }
                 }
                 checkCol++;
             }
@@ -97,7 +54,11 @@ public class King extends Pieces
             checkCol=0;
         }
         
-        
+        int row = Math.abs(f.getRow()-i.getRow());
+        int col = Math.abs(f.getCol()-i.getCol());
+        if((row==0||row==1)&&(col==0||col==1)){
+            return;
+        }
         throw new WrongMoveException("");
     }
     boolean judgeKing(Grid i,Grid f,Grid[][] board){
