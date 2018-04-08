@@ -20,13 +20,12 @@ public class ChessTester {
             i = b.getGrid(move.substring(0,2));
             f = b.getGrid(move.substring(3,5));
             try{
+                System.out.println(move+"\n");
                 b.move(i,f,i.getPieces().getColour());
+                System.out.println(b);
             }
             catch (Exception ex){
-                System.out.println("WrongMove");
-            }
-            finally{
-                System.out.println(b);
+                System.out.println("WrongMove\n");
             }
         }
     }
