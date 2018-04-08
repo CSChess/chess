@@ -22,7 +22,7 @@ public class ChessTester {
             try{
                 b.move(i,f,i.getPieces().getColour());
             }
-            catch (WrongMoveException ex){
+            catch (Exception ex){
                 System.out.println("WrongMove");
             }
             finally{
