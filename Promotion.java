@@ -1,10 +1,3 @@
-
-/**
- * Write a description of class RightInput here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
 public class  Promotion
 { 
     static boolean  promotionCheck=false;
