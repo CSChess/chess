@@ -14,9 +14,6 @@ public class Board
         int col = (int)(str.charAt(0)-97);
         int row = (int)(str.charAt(1)-49);
         
-        //System.out.println(row);
-        //System.out.println(col);
-        
         return board[row][col];
     }
     
