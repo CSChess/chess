@@ -1,6 +1,5 @@
 public class Knight extends Pieces
 {
-    Knight(){}
     Knight(boolean colour){
         super(colour);
     }

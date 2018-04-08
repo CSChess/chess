@@ -1,7 +1,6 @@
 public class Pawn extends Pieces
 {
     boolean isPromotion;
-    Pawn(){}
     Pawn(boolean colour){
         super(colour);
         isPromotion = false;

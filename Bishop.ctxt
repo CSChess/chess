@@ -1,9 +1,9 @@
 #BlueJ class context
-comment0.target=Queen
+comment0.target=Bishop
 comment1.params=
-comment1.target=Queen()
+comment1.target=Bishop()
 comment2.params=colour
-comment2.target=Queen(boolean)
+comment2.target=Bishop(boolean)
 comment3.params=i\ f\ board
 comment3.target=void\ judge(Grid,\ Grid,\ Grid[][])
 comment4.params=i\ f\ board
