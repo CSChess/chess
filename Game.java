@@ -23,7 +23,7 @@ public class Game
             System.out.println("\nto?");
             String end = br.readLine();
             if(end.equals("exit"))System.exit(0);
-            
+            //cheat code
             if(beg.equalsIgnoreCase("whosyour")&&end.equalsIgnoreCase("daddy")){System.out.println(colour()+" win?!");System.exit(0);}
             
             System.out.println("\n");
@@ -40,6 +40,9 @@ public class Game
             }
             catch(ArrayIndexOutOfBoundsException ex){
                 System.out.println("grid out of board");
+            }
+            catch(StringIndexOutOfBoundsException ex){
+              System.out.println("grid out of board");
             }
         }
         
