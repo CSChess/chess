@@ -20,7 +20,7 @@ public class Board
         return board[row][col];
     }
     
-    void move(Grid initialGrid,Grid finalGrid,boolean turn) throws WrongMoveException,GameOverException{
+    void move(Grid initialGrid,Grid finalGrid,boolean turn) throws WrongMoveException,GameOver{
         if(initialGrid.getPieces().getColour()!=turn)throw new WrongMoveException("");
         if(finalGrid.getPieces()!=null&& finalGrid.getPieces().getColour()==turn)throw new WrongMoveException("");
         initialGrid.getPieces().judge(initialGrid,finalGrid,board);
