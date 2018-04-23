@@ -12,6 +12,7 @@ public class Grid
         if(this.p instanceof King)throw new GameOver("");  
         this.p = p;
     }
+    
     void removePieces(){
         this.p = null;
     }
