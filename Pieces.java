@@ -2,8 +2,8 @@ abstract public class Pieces
 {
     protected boolean colour;
     protected boolean isMove;
-    Pieces(boolean b){
-        this.colour = b;
+    Pieces(boolean colour){
+        this.colour = colour;
         isMove = false;
     }
     Pieces(){}
@@ -13,5 +13,5 @@ abstract public class Pieces
     void moved(){
         isMove = true;
     }
-    abstract void judge(Grid i,Grid f,Grid[][] board) throws WrongMoveException;
+    abstract void judge(Grid initialGrid,Grid finalGrid,Grid[][] board) throws WrongMoveException;
 }
