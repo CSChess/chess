@@ -4,44 +4,44 @@ public class Queen extends Pieces
     Queen(boolean colour){
         super(colour);
     }
-    void judge(Grid i,Grid f,Grid[][] board)throws WrongMoveException{
-        int rowF = f.getRow();
-        int rowI = i.getRow();
-        int colF = f.getCol();
-        int colI = i.getCol();
+    void judge(Grid initialGrid,Grid finalGrid,Grid[][] board)throws WrongMoveException{
+        int rowF = finalGrid.getRow();
+        int rowI = initialGrid.getRow();
+        int colF = finalGrid.getCol();
+        int colI = initialGrid.getCol();
         boolean judge=false;
         if(rowF-rowI==0){
             judge=true;
-            int a = (int)((colF-colI)/(Math.abs(colF-colI)));
-            for(int x = colI+a;x!=colF;x+=a){
+            int stride = (int)((colF-colI)/(Math.abs(colF-colI)));
+            for(int x = colI+stride;x!=colF;x+=stride){
                 if(board[rowI][x].getPieces()!=null)throw new WrongMoveException("");
             }
             return;
         }
         else if(colF-colI==0){
             judge=true;
-            int a =(int)((rowF-rowI)/(Math.abs(rowF-rowI)));
-            for(int x = rowI+a;x!=rowF;x+=a){
+            int stride =(int)((rowF-rowI)/(Math.abs(rowF-rowI)));
+            for(int x = rowI+stride;x!=rowF;x+=stride){
                 if(board[x][colI].getPieces()!=null)throw new WrongMoveException("");
             }
             return;
         }
         else if(Math.abs(rowF-rowI)==Math.abs(colF-colI)){
-            int a;
-            int b;
+            int strideRow;
+            int strideCol;
             judge=true;
-            if(rowF-rowI>0)a=1;
-            else a=-1;
+            if(rowF-rowI>0)strideRow=1;
+            else strideRow=-1;
         
-            if(colF-colI>0)b=1;
-            else b=-1;
+            if(colF-colI>0)strideCol=1;
+            else strideCol=-1;
             
             int x=rowI;
             int y=colI;
-            while(x!=(rowF-a) && y!=(colF-b))
+            while(x!=(rowF-strideRow) && y!=(colF-strideCol))
             {
-                 x=x+a;
-                 y=y+b;
+                 x=x+strideRow;
+                 y=y+strideCol;
                  if(board[x][y].getPieces()!=null)throw new WrongMoveException(""); 
             }
             
@@ -50,43 +50,43 @@ public class Queen extends Pieces
         if(!judge)
             throw new WrongMoveException("");
     }
-    boolean judgeKing(Grid i,Grid f,Grid[][] board){
-        int rowF = f.getRow();
-        int rowI = i.getRow();
-        int colF = f.getCol();
-        int colI = i.getCol();
+    boolean judgeKing(Grid initialGrid,Grid finalGrid,Grid[][] board){
+        int rowF = finalGrid.getRow();
+        int rowI = initialGrid.getRow();
+        int colF = finalGrid.getCol();
+        int colI = initialGrid.getCol();
         boolean judge=false;
         boolean checkmate=false;
         if(rowF-rowI==0){
             judge=true;
-            int a = (int)((colF-colI)/(Math.abs(colF-colI)));
-            for(int x = colI+a;x!=colF;x+=a){
+            int stride = (int)((colF-colI)/(Math.abs(colF-colI)));
+            for(int x = colI+stride;x!=colF;x+=stride){
                 if(board[rowI][x].getPieces()!=null)return checkmate;
             }
             return true;
         }
         else if(colF-colI==0){
             judge=true;
-            int a =(int)((rowF-rowI)/(Math.abs(rowF-rowI)));
-            for(int x = rowI+a;x!=rowF;x+=a){
+            int stride =(int)((rowF-rowI)/(Math.abs(rowF-rowI)));
+            for(int x = rowI+stride;x!=rowF;x+=stride){
                 if(board[x][colI].getPieces()!=null)return checkmate;
             }
             return true;
         }
         else if(Math.abs(rowF-rowI)==Math.abs(colF-colI)){
-            int a;
-            int b;
+            int strideRow;
+            int strideCol;
             judge=true;
-            if(rowF-rowI>0)a=1;
-            else a=-1;
-            if(colF-colI>0)b=1;
-            else b=-1;
+            if(rowF-rowI>0)strideRow=1;
+            else strideRow=-1;
+            if(colF-colI>0)strideCol=1;
+            else strideCol=-1;
             int x=rowI;
             int y=colI;
-            while(x!=(rowF-a) && y!=(colF-b))
+            while(x!=(rowF-strideRow) && y!=(colF-strideCol))
             {
-                 x=x+a;
-                 y=y+b;
+                 x=x+strideRow;
+                 y=y+strideCol;
                  if(board[x][y].getPieces()!=null)return checkmate; 
             }
             return true;
