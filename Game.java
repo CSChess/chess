@@ -46,7 +46,7 @@ public class Game
                 b.move(b.getGrid(beg),b.getGrid(end),turn);
                 turn = !turn;
             }
-            catch(GoodGameException ex){
+            catch(GameOver ex){
                 flag = false;
             }
             catch(WrongMoveException ex){
