@@ -1,9 +1,13 @@
 # CSchess
-========
+
 
 ##Group member:
 --------------
-Tony Wu, Steven Dai, Ralap, Chris, Ricky
+1.Tony Wu
+2.Steven Dai
+3.Ralap
+4.Chris
+5.Ricky
 
 ##Note: 
 ---------------
@@ -12,4 +16,4 @@ we don't have:
 
 ##To test the move in a specific file:
 -------------
-    run the main method of the chessTester.java class and use the path of the file as parameter.
+    `run the main method of the chessTester.java class and use the path of the file as parameter.`
