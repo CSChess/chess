@@ -5,7 +5,6 @@ public class Game
     private Board b;
     private boolean flag = true;
     private boolean turn = true;
-    private Promotion p;
     Game() throws IOException{
         b = new Board();
         b.init();
@@ -26,19 +25,12 @@ public class Game
             if(end.equals("exit"))System.exit(0);
             // Cheat Codes
             if(beg.equalsIgnoreCase("whosyour")&&end.equalsIgnoreCase("daddy")){System.out.println(colour()+" win?!");System.exit(0);}
-            if(p.promotionCheck(end,colour())==true)
-            {
-                System.out.println("your rook arrive enemy's sideline, now you must change it");
-                String promotion=br.readLine();
-                b.promotion(promotion,b.getGrid(end),b.getGrid(beg));
-                judge=false;
-                turn = !turn;
-                
-                
-                
-            }
-            System.out.println("\n");
             
+                
+                
+                
+            
+            System.out.println("\n");
             
             
             if(judge==true){
