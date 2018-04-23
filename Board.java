@@ -70,31 +70,5 @@ public class Board
         result += "  a  b  c  d  e  f  g  h\n";
         return result;
     }
-    void promotion(String chessman,Grid grid,Grid remove)
-    {
-        boolean color=true;
-        int row=1;
-        if(chessman.substring(0,1)=="W")
-        {
-           color=false;
-           row=8;
-        }
-        if(chessman.substring(1,2).equals("R")){
-            grid.setPieces(new Rook(color));
-            remove.setPieces(null);
-        }
-        if(chessman.substring(1,2).equals("N")){
-            grid.setPieces(new Knight(color));
-            remove.setPieces(null);
-        } 
-        if(chessman.substring(1,2).equals("B")){
-            grid.setPieces(new Bishop(color));
-            remove.setPieces(null);
-        } 
-        if(chessman.substring(1,2).equals("Q")){
-            grid.setPieces(new Queen(color));
-            remove.setPieces(null);
-        } 
-        
-    }
+    
 }
