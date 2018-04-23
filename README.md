@@ -4,9 +4,9 @@
 <br>
 <br>
 <br>
-##Brief Introduction<br>
-------------
-This is a chess program from RDFZ XISHAN School. We use java language as you see. We wish you are enjoying the game.
+##Brief Introduction
+---------------
+<br>This is a chess program from RDFZ XISHAN School. We use java language as you see. We wish you are enjoying the game.
 
 
 ##Group Member:
