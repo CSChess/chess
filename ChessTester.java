@@ -14,14 +14,14 @@ public class ChessTester {
         b.init();
         
         String move;
-        Grid i;
-        Grid f;
+        Grid initialGrid;
+        Grid finalGrid;
         while((move=br.readLine())!=null){
-            i = b.getGrid(move.substring(0,2));
-            f = b.getGrid(move.substring(3,5));
+            initialGrid = b.getGrid(move.substring(0,2));
+            finalGrid = b.getGrid(move.substring(3,5));
             try{
                 System.out.println(move+"\n");
-                b.move(i,f,i.getPieces().getColour());
+                b.move(initialGrid,finalGrid,initialGrid.getPieces().getColour());
                 System.out.println(b);
             }
             catch (Exception ex){
@@ -30,7 +30,7 @@ public class ChessTester {
         }
     }
 
-    public static void main(String[] args) throws  Exception{
+    public static void main(String[] args) throws Exception{
         new ChessTester("args[0]");
     }
 }
