@@ -20,13 +20,13 @@ public class Board
         return board[row][col];
     }
     
-    void move(Grid i,Grid f,boolean turn) throws WrongMoveException,GameOver{
-        if(i.getPieces().getColour()!=turn)throw new WrongMoveException("");
-        if(f.getPieces()!=null&&f.getPieces().getColour()==turn)throw new WrongMoveException("");
-        i.getPieces().judge(i,f,board);
-        i.getPieces().moved();
-        f.movePieces(i.getPieces());
-        i.removePieces();
+    void move(Grid initialGrid,Grid finalGrid,boolean turn) throws WrongMoveException,GameOver{
+        if(initialGrid.getPieces().getColour()!=turn)throw new WrongMoveException("");
+        if(finalGrid.getPieces()!=null&& finalGrid.getPieces().getColour()==turn)throw new WrongMoveException("");
+        initialGrid.getPieces().judge(initialGrid,finalGrid,board);
+        initialGrid.getPieces().moved();
+        finalGrid.movePieces(initialGrid.getPieces());
+        initialGrid.removePieces();
     }
     
     void init(){
@@ -70,7 +70,7 @@ public class Board
         result += "  a  b  c  d  e  f  g  h\n";
         return result;
     }
-    void promotion(String chessman,Grid g,Grid remove)
+    void promotion(String chessman,Grid grid,Grid remove)
     {
         boolean color=true;
         int row=1;
@@ -80,22 +80,21 @@ public class Board
            row=8;
         }
         if(chessman.substring(1,2).equals("R")){
+            grid.setPieces(new Rook(color));
             remove.setPieces(null);
-            g.setPieces(new Rook(color));
         }
         if(chessman.substring(1,2).equals("N")){
-            g.setPieces(new Knight(color));
+            grid.setPieces(new Knight(color));
             remove.setPieces(null);
         } 
         if(chessman.substring(1,2).equals("B")){
-            g.setPieces(new Bishop(color));
+            grid.setPieces(new Bishop(color));
             remove.setPieces(null);
         } 
         if(chessman.substring(1,2).equals("Q")){
-            g.setPieces(new Queen(color));
+            grid.setPieces(new Queen(color));
             remove.setPieces(null);
         } 
-        
         
     }
 }
