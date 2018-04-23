@@ -6,11 +6,11 @@ public class King extends Pieces
     void judge(Grid initialGrid,Grid finalGrid,Grid[][] board)throws WrongMoveException{
         int checkRow=0;
         int checkCol=0;
-        Rook r=new Rook();
-        Queen q=new Queen();
-        Pawn p=new Pawn();
-        Knight k=new Knight();
-        Bishop b=new Bishop();
+        Rook r=new Rook(true);
+        Queen q=new Queen(true);
+        Pawn p=new Pawn(true);
+        Knight k=new Knight(true);
+        Bishop b=new Bishop(true);
         while(checkRow<8)
         {
             while(checkCol<8)
