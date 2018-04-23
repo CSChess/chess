@@ -1,6 +1,6 @@
-public class GoodGameException extends Exception
+public class GameOver extends Exception
 {
-    public GoodGameException(String message){
+    public GameOver(String message){
         super(message);
     }
 }
