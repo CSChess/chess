@@ -1,5 +1,6 @@
 public class Rook extends Pieces
 {
+    Rook(){}
     Rook(boolean colour){
         super(colour);
     }
