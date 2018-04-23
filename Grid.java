@@ -8,8 +8,8 @@ public class Grid
         this.col = col;
     }
     
-    void movePieces(Pieces p) throws GoodGameException{
-        if(this.p instanceof King)throw new GoodGameException("");  
+    void movePieces(Pieces p) throws GameOver{
+        if(this.p instanceof King)throw new GameOver("");  
         this.p = p;
     }
     void removePieces(){
