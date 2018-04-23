@@ -3,7 +3,7 @@ public class King extends Pieces
     King(boolean colour){
         super(colour);
     }
-    void judge(Grid i,Grid f,Grid[][] board)throws WrongMoveException{
+    void judge(Grid initialGrid,Grid finalGrid,Grid[][] board)throws WrongMoveException{
         int checkRow=0;
         int checkCol=0;
         Rook r=new Rook();
@@ -19,32 +19,32 @@ public class King extends Pieces
                 {
                         if(board[checkRow][checkCol].getPieces().toString().substring(1,2).equals("R"))
                         {
-                            if(r.judgeKing(board[checkRow][checkCol],f,board)==true)
+                            if(r.judgeKing(board[checkRow][checkCol],finalGrid,board)==true)
                             {throw new WrongMoveException("");}
                         }
                         if(board[checkRow][checkCol].getPieces().toString().substring(1,2).equals("K"))
                         {
-                            if(judgeKing(board[checkRow][checkCol],f,board)==true)
+                            if(judgeKing(board[checkRow][checkCol],finalGrid,board)==true)
                             {throw new WrongMoveException("");}
                         }
                         if(board[checkRow][checkCol].getPieces().toString().substring(1,2).equals("Q"))
                         {
-                            if(q.judgeKing(board[checkRow][checkCol],f,board)==true)
+                            if(q.judgeKing(board[checkRow][checkCol],finalGrid,board)==true)
                             {throw new WrongMoveException("");}
                         }
                         if(board[checkRow][checkCol].getPieces().toString().substring(1,2).equals("N"))
                         {
-                            if(k.judgeKing(board[checkRow][checkCol],f,board)==true)
+                            if(k.judgeKing(board[checkRow][checkCol],finalGrid,board)==true)
                             {throw new WrongMoveException("");}
                         }
                         if(board[checkRow][checkCol].getPieces().toString().substring(1,2).equals("B"))
                         {
-                            if(b.judgeKing(board[checkRow][checkCol],f,board)==true)
+                            if(b.judgeKing(board[checkRow][checkCol],finalGrid,board)==true)
                             {throw new WrongMoveException("");}
                         }
                         if(board[checkRow][checkCol].getPieces().toString().substring(1,2).equals("P"))
                         {
-                            if(p.judgeKing(board[checkRow][checkCol],f,board)==true)
+                            if(p.judgeKing(board[checkRow][checkCol],finalGrid,board)==true)
                             {throw new WrongMoveException("");}
                         }
                 }
@@ -54,16 +54,16 @@ public class King extends Pieces
             checkCol=0;
         }
         
-        int row = Math.abs(f.getRow()-i.getRow());
-        int col = Math.abs(f.getCol()-i.getCol());
+        int row = Math.abs(finalGrid.getRow()-initialGrid.getRow());
+        int col = Math.abs(finalGrid.getCol()-initialGrid.getCol());
         if((row==0||row==1)&&(col==0||col==1)){
             return;
         }
         throw new WrongMoveException("");
     }
-    boolean judgeKing(Grid i,Grid f,Grid[][] board){
-        int row = Math.abs(f.getRow()-i.getRow());
-        int col = Math.abs(f.getCol()-i.getCol());
+    boolean judgeKing(Grid initialGrid,Grid finalGrid,Grid[][] board){
+        int row = Math.abs(finalGrid.getRow()-initialGrid.getRow());
+        int col = Math.abs(finalGrid.getCol()-initialGrid.getCol());
         boolean checkmate=false;
         if((row==0||row==1)&&(col==0||col==1)){
             return true;
